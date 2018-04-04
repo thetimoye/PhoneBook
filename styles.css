@@ -1,0 +1,30 @@
+@import url('navstyles.css');
+
+body{
+    position: fixed;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: 400;
+    background-image: url('IMAGES/book1.jpg');
+    background-size: cover;
+}
+
+.homeTextBox{
+    position: relative;
+    top: 300px;
+    left: 800px;
+    /*margin: 5%;*/
+    text-align: center;
+}
+.homeButton{
+    display: block;
+    padding: 15px 10px;
+    border-radius: 5px;
+    text-align: center;
+    background-color: #fff;
+    color: green;
+    
+}
+a.homeButton{
+    text-decoration: none;
+    text-transform: uppercase;
+}

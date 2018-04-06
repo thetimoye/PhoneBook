@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
+
+</head>
+
+<body>
+    <div class="reg newContact">
+        <span class="login">add new contact</span>
+        <div class="regForm">
+            <form action="">
+                <div class="row">
+                    <div class="col1">
+                        <label for="firstname">First Name</label>
+                        <input type="text" id="fname" name="firstname" required>
+                    </div>
+                    <div class="col2">
+                        <label for="lastname">Last Name</label>
+                        <input type="text" id="lname" name="lastname" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col1">
+                        <label for="phone">Phone Number</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
+                    <div class="col2">
+                        <label for="username">Email</label>
+                        <input type="email" id="email" name="email">
+                    </div>
+                </div>
+
+            </form>
+        </div>
+
+        <button class="button addContactButton" onclick="addContact();">Add Contact</button>
+        <a href="#" class="button addContactButton">Add Contact</a>
+        <!-- <a href="#" class="button">Sign Up</a> -->
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

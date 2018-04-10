@@ -1,28 +1,88 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Page Title</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" media="screen" href="styles.css" />
-    
+
 </head>
+
 <body>
-    <div class="loginBox">
-        <span class="login">LOG IN</span>
-        <form action="">
-            <input type="text" id="uname" name="username" placeholder="UserName">
+    <div class="landingbox">
+        <div class="logo">
+            <img src="IMAGES/logo2.png" id="logo" alt="Our Logo">
+        </div>
+        <div class="introBox">
+            <span id="introHead">thetimoye's PhoneBook</span>
+            <span id="introsub">...reaching loved ones with ease</span>
+        </div>
+        <div class="loginBox">
+            <span class="login">Log In</span>
+            <form action="">
+                <input type="text" id="uname" name="username" placeholder="UserName">
+                <input type="password" id="passwd" name="password" placeholder="Password">
+            </form>
 
-            <input type="password" id="passwd" name="password" placeholder="Password">
-        </form>
-        
-        <a href="#"><small class="forgotPassword">Forgot Password?</small></a>
+            <a href="#">
+                <small class="forgotPassword">Forgot Password?</small>
+            </a>
 
-        <a href="#" class="button loginButton">Log In</a>
-        <a href="#"><small class="noAccount">Don't have an account?</small></a>
+            <a href="users-profile.html" class="button" id="loginButton">Log In</a>
+            <a href="register.html">
+                <small class="noAccount" id="noAcc">Don't have an account?</small>
+            </a>
+
+        </div>
     </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+
+<!-- === REGISTRATION MODAL === -->
+    <div class="reg" id="signUp">
+        <div class="regContent">
+            <span id="close">&times;</span>
+            <span class="login headerText">Sign Up</span>
+            <div class="regForm">
+                <form action="">
+                    <div class="row">
+                        <div class="col1">
+                            <label for="firstname">First Name</label>
+                            <input type="text" id="fname" name="firstname">
+                        </div>
+                        <div class="col2">
+                            <label for="lastname">Last Name</label>
+                            <input type="text" id="lname" name="lastname">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label for="username">User Name</label>
+                            <input type="text" id="uname" name="username">
+                        </div>
+                        <div class="col2">
+                            <label for="username">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col1">
+                            <label for="password">Password</label>
+                            <input type="password" id="pwd" name="password">
+                        </div>
+                        <div class="col2">
+                            <label for="confirmpassword">Confirm Password</label>
+                            <input type="password" id="c_pwd" name="confirmpassword">
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <a href="#" class="button" id="reg_button">Sign Up</a>
+        </div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
     <script src="script.js"></script>
 </body>
 </html>

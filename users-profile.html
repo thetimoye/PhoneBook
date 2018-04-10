@@ -12,36 +12,39 @@
 
 <body>
     <div class="container">
+        <span class="no_of_contacts"></span>
         <div class="reg newContact">
-            <span class="login">Contact Details</span>
+            <span class="login headerText">Contact Details</span>
             <div class="regForm">
                 <form action="">
                     <div class="row">
                         <div class="col1">
                             <label for="firstname">First Name</label>
-                            <input type="text" id="fname" name="firstname" required>
+                            <input type="text" id="fname" name="firstname">
                         </div>
                         <div class="col2">
                             <label for="lastname">Last Name</label>
-                            <input type="text" id="lname" name="lastname" required>
+                            <input type="text" id="lname" name="lastname">
                         </div>
                     </div>
                     <div class="row">
                         <div class="col1">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="tel" id="phone" name="phone">
                         </div>
                         <div class="col2">
-                            <label for="username">Email</label>
+                            <label for="email">Email</label>
                             <input type="email" id="email" name="email">
                         </div>
                     </div>
 
                 </form>
             </div>
-
-            <button class="button addContactButton" onclick="addContact();">Add Contact</button>
-            <a href="#" class="button addContactButton">Add Contact</a>
+            <a href="#" class="button cButton" onclick="addContact()">Add Contact</a>
+            <a href="#" class="button cButton" onclick="editDetails()">Edit Contact</a>
+            <a href="#" class="button cButton" id="deleteButton" onclick="deleteContact()">Delete Contact</a>
+            <span id="no_of_contacts"></span>
+            <!--  <a href="#" class="button addContactButton" onclick="addContact()">Add Contact</a> -->
             <!-- <a href="#" class="button">Sign Up</a> -->
         </div>
 
@@ -50,20 +53,19 @@
 
 
         <div class="mainBox">
-            <span class="login">Contact Details</span>
+            <span class="login headerText">Contact Details</span>
             <div class="contacts">
                 <table id="contact-list">
                     <thead>
                         <tr>
-                            <th id="s_n">S|N</th>
                             <th>First Name</th>
                             <th>Last Name</th>
-                            <th>Email</th>
                             <th>Phone Number</th>
+                            <th>Email</th>
                         </tr>
                     </thead>
                     <tbody>
-
+                        
                     </tbody>
                 </table>
             </div>

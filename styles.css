@@ -8,41 +8,89 @@ LIGHT GREY: #eef2ed
 MEDIUM GREY: #caccc9
 DARK GREY: #adafac
 */
-
+*{
+    box-sizing: border-box;
+}
 body{
     width: 100%;
     position: fixed;
     font-family: 'Times New Roman', Times, serif;
-    font-weight: 400;
-    /*background-image: linear-gradient(to right bottom, #98f24f7a, #22b7007a), url('IMAGES/people2.jpg');
-    background-size: cover;*/
-    
+    font-weight: 400;    
 }
+.landingbox{    
+    height: 100vh;
+    background-image:linear-gradient(to right bottom, #46f41eb2, #98f24fb2) , url('IMAGES/people1.jpg');
+    background-size: cover;
+    background-position: top;
+}
+.logo{
+    position: absolute;
+    top: 40px;
+    left: 40px;
+}
+#logo{
+    height: 50px;
+}
+/* === LANDING PAGE TEXT */
+.introBox{
+    position: absolute;
+    top: 35%;
+    left: 20px;
+    /*transform: translateY(-80%);*/
+    text-align: center;
+}
+#introHead{
+    display: block;
+    font-size: 55px;
+    color: #fff;
+    letter-spacing: 5px;
+}
+#introsub{
+    color: #fff;
+    letter-spacing: 12px;
+    font-size: 20px;
+    font-weight: 400;
+}
+
+
+/* === BUTTONS === */
 a{
     text-decoration: none;
 }
 .button{
-    padding: 12px 17px;
+    padding: 9px 17px;
     background-color: #fff;
     color: #46f41e;
     border-radius: 5px;
+    width: fit-content;
 }
 a.button:hover{
     background-color: #46f41e;
     color: #fff;
 }
-
-/*.forgotPassword{
-    float: left !important;
-}*/
-small.noAccount{
-    display: block;
+/* == PROFILE PAGE BUTTONS == */
+.resetButton, #reg_button, .addContactButton{
     text-align: center;
+    display: block;
+    background-color: #46f41e;
+    color: #fff;
+}
+.cButton{
+    display: inline-block;
+    margin-top: 3%;
+    background-color: #46f41e;
+    color: #fff;
+    font-weight: 600;
+}
+.cButton:hover{
+    opacity: 0.6;
+}
+#deleteButton{
+    background-color: red;
 }
 
-/*form{
-    margin: 5% 0;
-}*/
+
+/* === FORM CONTENT STYLES === */
 label{
     padding: 12px 12px 12px 0;
 }
@@ -53,28 +101,6 @@ input{
     border: 2px solid #eef2ed;
     border-radius: 5px;
     margin-top: 3%;
-}
-input:active{
-    border: #adafac;
-}
-.loginBox{
-    position: fixed;
-    top: 50%;
-    right: 10%;
-    transform: translateY(-50%); 
-    /*height: 50%*/;
-    width: 20%;
-    /*text-align: center;*/
-}
-.login{
-    font-size: 20px;
-    font-weight: 900;
-    text-transform: capitalize;
-}
-a.loginButton{
-    display: block;
-    margin: 3% 0;
-    text-align: center;
 }
 .row{
     margin: 3% 0;
@@ -92,35 +118,90 @@ a.loginButton{
 .col1{
     margin-right: 10%;
 }
-.resetButton, .reg_button, .addContactButton{
-    text-align: center;
+
+/* === LOG IN SECTION === */
+.loginBox{
+    position: fixed;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%); 
+    width: 20%;    
+}
+.login, headerText{
+    font-size: 35px;
+    font-weight: 700;
+    color: #fff;
+}
+span.headerText{
+    color: #000;
+}
+a#loginButton{
     display: block;
+    margin: 3% 0;
+    /*float: right;*/
+}
+
+
+/* === REGISTRATION MODAL === */
+#signUp{
+    display: none;
+    position: fixed;
+    z-index: 1;
+    padding: 10%;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.548);
+}
+.regContent{
+    position: relative;
+    top:0;
+    left: 50%;
+    transform: translateX(-70%);
+    background-color: #fefefe;
+    width: 40%;
+    padding: 20px;
+}
+#close{
+    font-weight: 400;
+    font-size: 30px;
+    color: #adafac;
+    float: right;
+}
+#close:hover{
+    cursor: pointer;
+    color: rgba(0, 0, 0, 0.61);
 }
 
 
 /*  ===   PROFILE PAGE STYLES   ===   */
 .container{
     display: flex;
+    margin: 3%;
+    box-shadow: -1px 4px 20px 6px #adafac;
+   
 }
-/*.mainBox{
-    /*width: 60%;
-    /*margin: 2%;
-    border: 2px outset #adafac;
+.mainBox{
+    overflow: auto;
+    height:100vh;
+    padding: 20px;
+    width: 60%;
 }
 .newContact{
-    width: 40%;
-}*/
+    padding: 20px;
+}
+
 .header{
     width: 100%;
-    padding: 15px;
+    padding: 15px;   
+    
 }
 a.headOptions{
    margin-right: 5%;
 }
-/*.contacts{
-    width: 100%;
-    margin: 5%;
-}*/
+
 table{
     border-collapse: collapse;
     width: 100%;
@@ -128,13 +209,23 @@ table{
 tr{
     width:  100%;
 }
-tr:nth-child(odd){
+tbody tr:hover, tbody tr:nth-child(odd):hover{
+    background-color: #adafac;
+    cursor: pointer;
+}
+tbody tr:nth-child(odd){
     background-color: #f7f7f7;
 }
 th,td{
     text-align: left;
     padding: 10px;
     width: 20%;
+}
+#no_of_contacts{
+    display: block;
+    font-size: 20px;
+    margin-top: 3%;
+    letter-spacing: 5px;
 }
 #s_n{
     width: 5%;

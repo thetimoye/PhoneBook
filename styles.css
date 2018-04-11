@@ -179,7 +179,7 @@ a#loginButton{
 /*  ===   PROFILE PAGE STYLES   ===   */
 .container{
     display: flex;
-    margin: 3%;
+    margin: 2%;
     box-shadow: -1px 4px 20px 6px #adafac;
    
 }

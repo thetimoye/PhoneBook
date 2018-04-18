@@ -30,7 +30,7 @@
                     <div class="row">
                         <div class="col1">
                             <label for="phone">Phone Number</label>
-                            <input type="tel" id="phone" name="phone" required>
+                            <input type="number" id="phone" name="phone" required>
                         </div>
                         <div class="col2">
                             <label for="email">Email</label>
@@ -42,9 +42,9 @@
             </div>
             <a href="#" class="button cButton" onclick="addContact()">Add Contact</a>
             <a href="#" class="button cButton" onclick="editDetails()">Edit Contact</a>
-            <a href="#" class="button cButton" id="deleteButton" onclick="deleteContact()">Delete Contact</a>
+            <a href="#" class="button cButton" id="deleteButton">Delete Contact</a>
             <span id="no_of_contacts"></span>
-            
+
         </div>
 
 
@@ -52,7 +52,7 @@
 
 
         <div class="mainBox">
-            <span class="login headerText">Contact Details</span>
+            <span class="login headerText">Contact List</span>
             <div class="contacts">
                 <table id="contact-list">
                     <thead>
@@ -63,16 +63,26 @@
                             <th>Email</th>
                         </tr>
                     </thead>
-                    <tbody>
-                        
+                    <tbody id="tbody">
+
                     </tbody>
                 </table>
             </div>
+        </div>
+
+        <div class="alert" id="delete_alert">
+            <div class="alert_modal">
+                <strong id="deleteMessage"></strong>
+                <button class="deleteOption" id="confirmDelete">OK</button>
+                <button class="deleteOption" id="cancelDelete">Cancel</button>
+            </div>
+
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous">
         </script>
+    <script src="modal.js"></script>
     <script src="script.js"></script>
 </body>
 

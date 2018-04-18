@@ -1,5 +1,9 @@
 // === PROFILE PAGE SCRIPT ===
 
+function hint(){
+    alert("Just click 'lOG IN' to begin");
+}
+
 function ready() {
     
     document.getElementById("fname").value = "";
@@ -7,7 +11,6 @@ function ready() {
     document.getElementById("phone").value = "";
     document.getElementById("email").value = "";
 }
-
 
 function numberOfContact(){
     var text = "";
@@ -49,7 +52,7 @@ function addContact() {
 
 
 function showRowDetails() {
-
+    var tableBody = document.getElementById("tbody");
     for (var i = 0; i < table.rows.length; i++) {
         table.rows[i].onclick = function () {
             rIndex = this.rowIndex;
@@ -81,26 +84,40 @@ function editDetails() {
 
 
 function deleteContact() {
-    
     table.deleteRow(rIndex);
     numberOfContact();
-    ready();
-    
-}
+    ready();    
+};
+
+function deleteFunc(){
 
 
-// === REGISTRATION MODAL FUNCTION ===
-function regModal() {
-    var x = document.getElementById("noAcc");
-    var y = document.getElementById("signUp");
-    var z = document.getElementById("close");
 
-    x.onclick = function(e) {
+    var a = document.getElementById("delete_alert");
+    var b = document.getElementById("confirmDelete");
+    var c = document.getElementById("cancelDelete");
+    var d = document.getElementById("deleteButton");
+    var contactName = document.getElementById("deleteMessage");
+
+    d.onclick = function (e){
         e.preventDefault();
-        y.style.display = "block";
-    }
-    z.onclick = function(){
-        y.style.display = "none";
+        a.style.display = "block";
+
+        var message = "";
+        var f = document.getElementById("fname").value;
+        var l = document.getElementById("lname").value;
+        message = ("Are you sure you want to delete contact "+f+" "+l+"?");
+        contactName.innerText = message;
+
+        b.onclick = function(){
+            deleteContact();
+            a.style.display = "none";
+        }
+        c.onclick = function(){
+            a.style.display = "none";
+            ready();
+        }
     }
 }
-regModal(); 
+
+deleteFunc();

@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="landingbox">
+    <div onload="hint()" class="landingbox">
         <div class="logo">
             <img src="IMAGES/logo2.png" id="logo" alt="Our Logo">
         </div>
@@ -31,15 +31,15 @@
             </a>
 
             <a href="users-profile.html" class="button" id="loginButton">Log In</a>
-            <a href="register.html">
+            <a href="#">
                 <small class="noAccount" id="noAcc">Don't have an account?</small>
             </a>
 
         </div>
     </div>
 
-<!-- === REGISTRATION MODAL === -->
-    <div class="reg" id="signUp">
+    <!-- === REGISTRATION MODAL === -->
+    <div class="reg alert" id="signUp">
         <div class="regContent">
             <span id="close">&times;</span>
             <span class="login headerText">Sign Up</span>
@@ -77,12 +77,14 @@
                     </div>
                 </form>
             </div>
-            <a href="#" class="button" id="reg_button">Sign Up</a>
+            <a href="users-profile.html" class="button" id="reg_button">Sign Up</a>
         </div>
 
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
         crossorigin="anonymous"></script>
+    <script src="modal.js"></script>
     <script src="script.js"></script>
 </body>
+
 </html>

@@ -1,4 +1,4 @@
-@import url('navstyles.css');
+
 
 /*Light Green: #98f24f
 Medium Green: #46f41e
@@ -11,6 +11,44 @@ DARK GREY: #adafac
 *{
     box-sizing: border-box;
 }
+
+#loader {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    z-index: 1;
+    width: 100px;
+    height: 100px;
+    margin: -75px 0 0 -75px;
+    border: 16px solid #f3f3f3;
+    border-radius: 50%;
+    border-top: 16px solid #3498db;
+    width: 120px;
+    height: 120px;
+    -webkit-animation: spin 2s linear infinite;
+    animation: spin 2s linear infinite;
+  }
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  /* Add animation to "page content" */
+  .animate-bottom {
+    position: relative;
+    -webkit-animation-name: animatebottom;
+    -webkit-animation-duration: 1s;
+    animation-name: animatebottom;
+    animation-duration: 1s
+  }
+  @keyframes animatebottom { 
+    from{ bottom:-100px; opacity:0 } 
+    to{ bottom:0; opacity:1 }
+  }
+  
+html{
+    font-size: 62.5%;
+}
 body{
     width: 100%;
     position: fixed;
@@ -22,33 +60,34 @@ body{
     background-image:linear-gradient(to right bottom, #46f41eb2, #98f24fb2) , url('IMAGES/people1.jpg');
     background-size: cover;
     background-position: top;
+    animation: animate 2s; 
 }
 .logo{
     position: absolute;
-    top: 40px;
-    left: 40px;
+    top: 4rem;
+    left: 4rem;
 }
 #logo{
-    height: 50px;
+    height: 5rem;
 }
 /* === LANDING PAGE TEXT */
 .introBox{
     position: absolute;
     top: 35%;
-    left: 20px;
+    left: 2rem;
     /*transform: translateY(-80%);*/
     text-align: center;
 }
 #introHead{
     display: block;
-    font-size: 55px;
+    font-size: 5.5rem;
     color: #fff;
-    letter-spacing: 5px;
+    letter-spacing: .5rem;
 }
 #introsub{
     color: #fff;
-    letter-spacing: 12px;
-    font-size: 20px;
+    letter-spacing: 1.2rem;
+    font-size: 2rem;
     font-weight: 400;
 }
 
@@ -58,10 +97,11 @@ a{
     text-decoration: none;
 }
 .button{
-    padding: 9px 17px;
+    padding: .9rem 1.7rem;
+    font-size: 1.5rem;
     background-color: #fff;
     color: #46f41e;
-    border-radius: 5px;
+    border-radius: .5rem;
     width: fit-content;
 }
 a.button:hover{
@@ -92,14 +132,15 @@ a.button:hover{
 
 /* === FORM CONTENT STYLES === */
 label{
-    padding: 12px 12px 12px 0;
+    padding: 1.2rem 1.2rem 1.2rem 0;
+    font-size: 1.5rem;
 }
 input{
     width: 100%;
-    padding: 12px;
+    padding: 1.2rem;
     display: block;
     border: 2px solid #eef2ed;
-    border-radius: 5px;
+    border-radius: .5rem;
     margin-top: 3%;
 }
 .row{
@@ -128,7 +169,7 @@ input{
     width: 20%;    
 }
 .login, headerText{
-    font-size: 35px;
+    font-size: 3.5rem;
     font-weight: 700;
     color: #fff;
 }
@@ -140,10 +181,12 @@ a#loginButton{
     margin: 3% 0;
     /*float: right;*/
 }
-
+small{
+    font-size: 1.2rem;
+}
 
 /* === REGISTRATION MODAL === */
-#signUp{
+#delete_alert, #signUp{
     display: none;
     position: fixed;
     z-index: 1;
@@ -154,6 +197,14 @@ a#loginButton{
     height: 100%;
     overflow: auto;
     background-color: rgba(0, 0, 0, 0.548);
+    animation: animate 1s;
+}
+@keyframes animate{
+    from{ 
+        bottom:-10rem; opacity:0 
+    } to{
+         bottom:0; opacity:1 
+        }
 }
 .regContent{
     position: relative;
@@ -162,11 +213,11 @@ a#loginButton{
     transform: translateX(-70%);
     background-color: #fefefe;
     width: 40%;
-    padding: 20px;
+    padding: 2rem;
 }
 #close{
     font-weight: 400;
-    font-size: 30px;
+    font-size: 3rem;
     color: #adafac;
     float: right;
 }
@@ -180,22 +231,22 @@ a#loginButton{
 .container{
     display: flex;
     margin: 2%;
-    box-shadow: -1px 4px 20px 6px #adafac;
-   
+    box-shadow: -0.1rem .4rem 2rem .6rem #adafac;
+    animation: animate 3s;   
 }
 .mainBox{
     overflow: auto;
-    height:100vh;
-    padding: 20px;
+    height: 90vh;
+    padding: 2rem;
     width: 60%;
 }
 .newContact{
-    padding: 20px;
+    padding: 2rem;
 }
 
 .header{
     width: 100%;
-    padding: 15px;   
+    padding: 1.5rem;   
     
 }
 a.headOptions{
@@ -208,6 +259,7 @@ table{
 }
 tr{
     width:  100%;
+    font-size: 1.5rem;
 }
 tbody tr:hover, tbody tr:nth-child(odd):hover{
     background-color: #adafac;
@@ -218,15 +270,38 @@ tbody tr:nth-child(odd){
 }
 th,td{
     text-align: left;
-    padding: 10px;
+    padding: 1rem;
     width: 20%;
 }
 #no_of_contacts{
     display: block;
-    font-size: 20px;
+    font-size: 2rem;
     margin-top: 3%;
-    letter-spacing: 5px;
+    letter-spacing: .5rem;
 }
 #s_n{
     width: 5%;
+}
+.alert_modal{
+    position: relative;
+    top:50%;
+    left: 50%;
+    transform: translate(-50%, -70%);
+    width: 40%;
+    padding: 2rem;
+    background-color: rgba(255, 0, 0, 0.849);
+    color: #fff;
+    transition: opacity 1s;
+    text-align: center;
+    font-size: 2rem;
+
+}
+#deleteMessage{
+    margin: 5% 0;
+    
+    display: block;
+}
+.deleteOption{
+    padding: .6rem 2rem;
+    cursor: pointer;
 }

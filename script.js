@@ -52,7 +52,7 @@ function addContact() {
 
 
 function showRowDetails() {
-    var tableBody = document.getElementById("tbody");
+    
     for (var i = 0; i < table.rows.length; i++) {
         table.rows[i].onclick = function () {
             rIndex = this.rowIndex;
